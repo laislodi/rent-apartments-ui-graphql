@@ -20,6 +20,9 @@ export const MenuNavBar: React.FunctionComponent = () => {
             <li className={"nav-item"}>
               <Link to={ROUTE_CONSTANTS.HOME} className={"navbar-brand"}>Home</Link>
             </li>
+            <li className={"nav-item"}>
+              <Link to={ROUTE_CONSTANTS.APARTMENTS} className={"navbar-brand"}>Apartments</Link>
+            </li>
           </ul>
         </div>
         <LoginMenu/>
