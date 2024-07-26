@@ -2,14 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_CONSTANTS } from "../resources/routes";
 import { LoginMenu } from "./LoginMenu";
-import { TRole, USER_ROLE } from "../queries/user";
 
 
 export const MenuNavBar: React.FunctionComponent = () => {
-  const role: TRole = {
-    id: 1,
-    role: "USER"
-  };
 
   return (
     <nav className={"navbar navbar-expand-lg bg-primary-subtle"}>
@@ -25,13 +20,6 @@ export const MenuNavBar: React.FunctionComponent = () => {
             <li className={"nav-item"}>
               <Link to={ROUTE_CONSTANTS.HOME} className={"navbar-brand"}>Home</Link>
             </li>
-            <li className={"nav-item"}>
-              <Link to={ROUTE_CONSTANTS.APARTMENTS} className={"navbar-brand"}>Apartments</Link>
-            </li>
-            {role?.role === USER_ROLE.role &&
-            <li className={"nav-item"}>
-              <Link to={`${ROUTE_CONSTANTS.APARTMENTS}/${ROUTE_CONSTANTS.ADD}`} className={"navbar-brand"}>Add Apartments</Link>
-            </li> }
           </ul>
         </div>
         <LoginMenu/>
