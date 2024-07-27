@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ROUTE_CONSTANTS } from "../resources/routes";
 import { Link } from "react-router-dom";
-import { useAuth } from "../utils/AuthContext";
 
 export const LoginMenu: React.FunctionComponent = () => {
 
@@ -10,7 +9,6 @@ export const LoginMenu: React.FunctionComponent = () => {
   };
 
   const [authToken, setAuthToken] = useState(getAuthToken());
-  const { logout } = useAuth();
 
   return(
     <div>
@@ -19,7 +17,6 @@ export const LoginMenu: React.FunctionComponent = () => {
           <div className={"navbar navbar-brand"} >
             <Link
               onClick={() => {
-                logout(authToken);
                 setAuthToken(null);
               }}
               className={"btn btn-dark mx-1"}
